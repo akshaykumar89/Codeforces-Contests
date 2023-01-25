@@ -13,6 +13,7 @@
 #define pii pair<int,int>
 #define mii map<int,int>
 #define pqb priority_queue<int>
+#define take(name,size) vi name(size) ; ilop(i,0,size) cin>>name[i];
 #define pqs priority_queue<int,vi,greater<int>>
 #define setbits(x) __builtin_popcountll(x)
 #define zrobits(x) __builtin_ctzll(x)
@@ -35,8 +36,11 @@ void akshay()
 
 void solver()
 {
-int n; 
- cin>>n;
+int cnt; 
+ cin>>cnt;
+ int ans=0;
+ 
+
     
 }
 

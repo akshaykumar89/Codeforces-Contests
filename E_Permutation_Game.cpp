@@ -26,7 +26,54 @@
 #define edlop(i,x,y) for(int i=y;i>=x;i--)
 #define dlop(i,y,x) for(int i=y;i>x;i--)
 using namespace std;
-
+/////////////////////////////////////////
+void __print(int x) {cerr << x;}
+void __print(long x) {cerr << x;}
+void __print(long long x) {cerr << x;}
+void __print(unsigned x) {cerr << x;}
+void __print(unsigned long x) {cerr << x;}
+void __print(unsigned long long x) {cerr << x;}
+void __print(float x) {cerr << x;}
+void __print(double x) {cerr << x;}
+void __print(long double x) {cerr << x;}
+void __print(char x) {cerr << '\'' << x << '\'';}
+void __print(const char *x) {cerr << '\"' << x << '\"';}
+void __print(const string &x) {cerr << '\"' << x << '\"';}
+void __print(bool x) {cerr << (x ? "true" : "false");}
+"": {
+  "prefix": "",
+  "body": [
+    "░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄",
+    "░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄",
+    "░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█",
+    "░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░█",
+    "░▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░█",
+    "█▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒█",
+    "█▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█",
+    "░█▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█",
+    "░░█░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█",
+    "░░░█░░██░░▀█▄▄▄█▄▄█▄████░█",
+    "░░░░█░░░▀▀▄░█░░░█░███████░█",
+    "░░░░░▀▄░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█",
+    "░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░█",
+    "░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░█",
+    "░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░█",
+  ],
+  "description": ""
+}
+template<typename T, typename V>
+void __print(const pair<T, V> &x) {cerr << '{'; __print(x.first); cerr << ','; __print(x.second); cerr << '}';}
+template<typename T>
+void __print(const T &x) {int f = 0; cerr << '{'; for (auto &i: x) cerr << (f++ ? "," : ""), __print(i); cerr << "}";}
+void _print() {cerr << "]\n";}
+template <typename T, typename... V>
+void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v...);}
+#ifndef ONLINE_JUDGE
+#define debug(x...) cerr << "[" << #x << "] = ["; _print(x)
+#else
+#define debug(x...)
+#endif
+//////////////////////////////////////////
 void akshay()
 {
     ios_base::sync_with_stdio(0);
@@ -38,33 +85,7 @@ void solver()
 {
 int n; 
  cin>>n;
-    take(a,n);
-    int u1=0,u2=0,c=0;
-    ilop(i,0,n)
-    {
-         if(a[i]!=i+1 and a[i]!=n-i)c++;
-         else if(a[i]!=i+1) u1++;
-         else if(a[i]!=n-i) u2++;
-    }
-    // cout<<u1<<" "<<c<<" "<<u2<<endl;
-    int mn=min(u1,u2);
-    u1-=mn;
-    u2-=mn;
-    if(u1==0)
-    {
-        if(u2>=c)
-        {
-            cout<<"First\n";
-        }
-        else cout<<"Tie\n";
-    }
-    else{
-        if(u1>c)
-        {
-            cout<<"Second\n";
-        }
-        else cout<<"Tie\n";
-    }
+    
 }
 
  int tc=1;
